@@ -183,7 +183,16 @@ def index():
     return False
 
 
-def header(): pass
+def header(): 
+    global lookahead, locctr
+    global startAddr
+    lookahead = lexan()
+    tok = tokenval
+    match("ID")
+    match("START")
+    startAddr = symtable[tokenval].att = locctr = tokenval
+    match("NUM")
+
 def body(): pass
 def tail(): pass
 
