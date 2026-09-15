@@ -183,10 +183,6 @@ def index():
     return False
 
 
-def header(): pass
-def body(): pass
-def tail(): pass
-
 def parse():
     # write the parser her
     #lab 2

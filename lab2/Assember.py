@@ -184,8 +184,7 @@ def index():
 
 
 def header(): 
-    global lookahead, locctr
-    global startAddr
+    global lookahead, locctr, startAddr
     lookahead = lexan()
     tok = tokenval
     match("ID")
