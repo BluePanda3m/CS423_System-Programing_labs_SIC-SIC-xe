@@ -203,9 +203,13 @@ def rest1():
 #lab3
 def rest2():
     global locctr
-    if lookahead in ('STRING', 'HEX'):
-        locctr += len(symtable[tokenval].att) // 2
-        match(lookahead)
+    size = int(len(symtable[tokenval].att)) //2
+    if lookahead == 'STRING':
+        locctr += size
+        match("STRING")
+    elif lookahead == 'HEX':
+        locctr += size
+        match("HEX")
     else:
         error('Syntax error')
 
