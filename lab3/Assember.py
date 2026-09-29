@@ -202,18 +202,32 @@ def rest1():
         error('Syntax error')
 #lab3
 def rest2():
+    global locctr
     if lookahead in ('STRING', 'HEX'):
+        locctr += len(symtable[tokenval].att) // 2
         match(lookahead)
     else:
         error('Syntax error')
 
 def DATA():
-    if lookahead in ('WORD', 'RESW', 'RESB'):
-        match(lookahead)
+    global locctr
+    if lookahead == 'WORD':
+        match('WORD')
+        locctr += 3
+        match('NUM')
+    elif lookahead == 'RESW':
+        match('RESW')
+        locctr += 3 * tokenval
+        match('NUM')
+    elif lookahead == 'RESB':
+        match('RESB')
+        locctr += tokenval
         match('NUM')
     elif lookahead == 'BYTE':
         match('BYTE')
         rest2()
+    else:
+        error('Syntax error')
 #lab3
 def stmt(): 
     global locctr, startLine
