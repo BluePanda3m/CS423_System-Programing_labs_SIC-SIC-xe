@@ -182,7 +182,7 @@ def index():
         return True
     return False
 
-
+#lab2
 def header(): 
     global lookahead, locctr, startAddr
     lookahead = lexan()
@@ -192,7 +192,52 @@ def header():
     startAddr = symtable[tokenval].att = locctr = tokenval
     match("NUM")
 
-def body(): pass
+#lab3
+def rest1():
+    if lookahead == 'F3':
+        stmt()
+    elif lookahead in( 'WORD', 'BYTE', 'RESW', 'RESB'):
+        DATA()
+    else:
+        error('Syntax error')
+#lab3
+def rest2():
+    if lookahead in ('STRING', 'HEX'):
+        match(lookahead)
+    else:
+        error('Syntax error')
+
+def DATA():
+    if lookahead in ('WORD', 'RESW', 'RESB'):
+        match(lookahead)
+        match('NUM')
+    elif lookahead == 'BYTE':
+        match('BYTE')
+        rest2()
+#lab3
+def stmt(): 
+    global locctr, startLine
+    startLine = False
+    if lookahead == 'F3':
+        match("F3")
+        match("ID")
+        locctr += 3
+        index()
+#lab3
+def body(): 
+    if lookahead == 'ID':
+        match("ID")
+        rest1()
+        body()
+    elif lookahead == 'F3':
+        stmt()
+        body()
+    elif lookahead == 'END':
+        pass
+    else:
+        error('Syntax error')
+
+#lab3
 def tail(): 
     global progsize, startAddr
     match("END")
