@@ -1,3 +1,6 @@
-P2 start 0 
-    ADDR X, s
-end prog
+P3 start 0 
+    add #yy
+    LDA rr
+rr resb 10
+yy word 5
+    end prog
