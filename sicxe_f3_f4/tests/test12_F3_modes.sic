@@ -1,0 +1,6 @@
+n start 0
+first lda #5
+ rsub
+ j first
+ lda 100
+ end n

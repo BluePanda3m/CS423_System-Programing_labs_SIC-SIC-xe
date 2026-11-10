@@ -1,0 +1,4 @@
+P4 start 0
+   +LDA yy
+yy word 5
+    end  prog

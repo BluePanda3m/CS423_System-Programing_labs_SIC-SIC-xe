@@ -1,0 +1,9 @@
+bt start 0
+ +ldb #far
+ base far
+ lda far,x
+ j @ptr
+ptr word 0
+buf resb 4096
+far word 1
+ end bt

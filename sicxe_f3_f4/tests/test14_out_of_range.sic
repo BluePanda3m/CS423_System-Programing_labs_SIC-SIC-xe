@@ -1,0 +1,5 @@
+bt start 0
+ lda far
+buf resb 4096
+far word 1
+ end bt

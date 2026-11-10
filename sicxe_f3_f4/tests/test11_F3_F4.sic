@@ -1,0 +1,6 @@
+P3 start 0
+   add #yy
+   LDA rr
+rr resb 10
+yy word 5
+    end  prog

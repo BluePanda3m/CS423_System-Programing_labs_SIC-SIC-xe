@@ -1,0 +1,6 @@
+prog start 0
+    lda xx
+    sta yy
+xx  word 5
+yy  resw 1
+    end prog

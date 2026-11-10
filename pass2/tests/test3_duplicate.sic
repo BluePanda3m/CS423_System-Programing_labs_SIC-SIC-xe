@@ -1,0 +1,5 @@
+test start 0
+first lda val
+val word 1
+first word 2
+ end test
