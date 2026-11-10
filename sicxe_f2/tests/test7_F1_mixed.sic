@@ -1,0 +1,7 @@
+mix start 0
+ fix
+ lda xx
+lbl float
+ hio
+xx word 3
+ end mix

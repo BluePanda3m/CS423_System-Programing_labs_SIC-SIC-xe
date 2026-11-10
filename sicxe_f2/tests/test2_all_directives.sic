@@ -1,0 +1,11 @@
+copy start 0x1000
+first lda alpha
+ sta buf,x
+ j first
+eof byte c'EOF'
+out byte x'F1'
+alpha word 7
+buf resb 10
+tab resw 2
+last lda tab
+ end copy

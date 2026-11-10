@@ -1,0 +1,8 @@
+mix2 start 0
+ clear a
+ rmo s, t
+lbl compr a, x
+ fix
+ lda val
+val word 1
+ end mix2

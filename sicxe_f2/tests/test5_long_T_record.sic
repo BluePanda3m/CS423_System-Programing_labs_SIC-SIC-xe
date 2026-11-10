@@ -1,0 +1,15 @@
+big start 0x2000
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+ lda v
+v word 0x10
+ end big

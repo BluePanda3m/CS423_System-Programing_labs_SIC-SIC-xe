@@ -1,0 +1,5 @@
+test start 0
+ lda val
+ sta nowhere
+val word 1
+ end test
